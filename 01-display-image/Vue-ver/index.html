@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="css/style.css" rel="stylesheet" />
+        <script src="https://unpkg.com/vue@latest"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="text-center bg-slate-400">
+        <div id="app">
+            <h1>Sign in</h1>
+            <form>
+                username:
+                <input
+                    type="text"
+                    class="username mb-1 border-solid border-black border-2 rounded-lg"
+                    v-model.lazy.trim="username"
+                />
+                <br />
+                password:
+                <input
+                    type="password"
+                    class="password mb-1 border-solid border-black border-2 rounded-lg"
+                    v-model.lazy.trim="password"
+                />
+                <br />
+
+                <div v-if="fileList.length > 0" v-for="(file, idx) in fileList">
+                    <div class="border-2 border-black border-solid my-1">
+                        <img
+                            v-if="file !== null"
+                            :src="getImageURL(file)"
+                            alt=""
+                            class="w-2/5 h-auto mx-auto"
+                        />
+                        <br />
+                        <button @click.prevent="deleteImage(idx)">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+
+                <label
+                    for="name"
+                    class="choose-image-label border-solid border-black rounded-lg border-2 hover:text-white hover:bg-black"
+                    >choose image</label
+                >
+                <input
+                    type="file"
+                    class="image-input hidden"
+                    accept="image/*"
+                    id="name"
+                    multiple
+                    @change.prevent="onFileChange($event)"
+                />
+                <br />
+                <button
+                    type="submit"
+                    class="signBtn mt-1 border-black border-solid border-2 rounded-lg"
+                >
+                    Sign in
+                </button>
+            </form>
+        </div>
+
+        <script defer src="./main.js"></script>
+    </body>
+</html>

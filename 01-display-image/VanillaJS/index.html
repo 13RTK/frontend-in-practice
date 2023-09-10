@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="./style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1>Sign in</h1>
+        <form>
+            username: <input type="text" class="username" />
+            <br />
+            password: <input type="password" class="password" />
+            <br />
+
+            <img src="" alt="" class="hidden image" />
+            <br />
+
+            <label for="name" class="choose-image-label">choose image</label>
+            <input
+                type="file"
+                class="image-input hidden"
+                accept="image/*"
+                id="name"
+            />
+            <br />
+            <button type="submit" class="signBtn">Sign in</button>
+        </form>
+
+        <script src="./main.js"></script>
+    </body>
+</html>

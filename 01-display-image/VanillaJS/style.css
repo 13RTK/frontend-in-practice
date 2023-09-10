@@ -1,0 +1,33 @@
+* {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.choose-image-label {
+    border-style: solid;
+    border-color: black;
+    border-radius: 8px;
+}
+
+.choose-image-label:hover {
+    border-style: solid;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+}
+
+input {
+    margin-bottom: 4px;
+}
+
+.signBtn {
+    margin-top: 4px;
+}
+
+.image {
+    width: 40%;
+    height: auto;
+}
